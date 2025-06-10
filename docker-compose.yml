@@ -1,0 +1,33 @@
+networks:
+  red_de_santiago:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 10.10.0.0/24
+          gateway: 10.10.0.1
+
+services:
+  maquina1:
+    image: ubuntu:22.04
+    container_name: maquina1
+    ports:
+      - "80:80"
+    networks:
+      red_de_santiago:
+        ipv4_address: 10.10.0.11
+    tty: true
+  maquina2:
+    image: debian:12.11
+    container_name: maquina2
+    networks:
+      red_de_santiago:
+        ipv4_address: 10.10.0.12
+    tty: true
+  maquina3:
+    image: debian:12.11
+    container_name: maquina3
+    networks:
+      red_de_santiago:
+        ipv4_address: 10.10.0.13
+    tty: true
