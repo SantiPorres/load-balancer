@@ -1,4 +1,4 @@
-DESARROLLO DEL TEMA
+IMPLEMENTACIÓN DE BALANCEADOR DE CARGA CON NGNIX
 
 - Verificamos que las máquinas se ven entre ellas
 
